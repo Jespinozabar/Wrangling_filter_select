@@ -165,6 +165,15 @@ movies %>%
   drop_na(budget)
 ```
 
+```{r}
+movies %>%
+  filter(year >= 2000) %>%
+  select(title, rating, budget) %>%
+  drop_na(budget)
+
+```
+
+
 
 ## Arrange
 
