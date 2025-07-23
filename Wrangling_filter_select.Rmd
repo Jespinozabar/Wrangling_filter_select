@@ -252,8 +252,27 @@ These are the Comedy movies (including mixed genres like "Comedy") that have an 
 3. Create a subset of only Harry Potter movies with the title, rating, budget, and votes. Which movies are included in this data? Which is highest rated? Which has the most votes on imdb.com?
 
 ```{r}
+# Subset of Harry Potter movies
+hp_movies <- movies %>%
+  filter(str_detect(title, "Harry Potter")) %>%
+  select(title, rating, budget, votes)
+
+# View all Harry Potter movies included
+hp_movies
+
+# Highest rated Harry Potter movie
+hp_movies %>%
+  arrange(desc(rating)) %>%
+  slice(1)
+
+# Harry Potter movie with the most votes
+hp_movies %>%
+  arrange(desc(votes)) %>%
+  slice(1)
 
 ```
+
+The subset includes all movies with "Harry Potter" in the title, showing their title, rating, budget, and votes. The highest-rated Harry Potter movie is Harry Potter and the Deathly Hallows: Part 2, and the one with the most IMDb votes is Harry Potter and the Sorcerer's Stone.
 
 4. What is the highest budget for a movie that is an Animation or Comedy with at least 100 votes?
 
