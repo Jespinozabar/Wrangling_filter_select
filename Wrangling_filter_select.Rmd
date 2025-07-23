@@ -209,6 +209,13 @@ movies %>%
 ```
 Cure for insomnia was the longest movie. 
 
+```{r}
+movies %>%
+  arrange(year) %>%
+  slice(1)
+
+```
+The oldest movie is Blacksmith scene.
 
 ## Scavenger Hunt
 
