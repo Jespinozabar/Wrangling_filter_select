@@ -173,7 +173,7 @@ movies %>%
 
 ```
 
-
+The code doesn’t work because it tries to filter on the year column after that column has been removed by select(), so year no longer exists when filtering is applied.
 
 ## Arrange
 
