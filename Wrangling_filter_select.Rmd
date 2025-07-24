@@ -294,10 +294,29 @@ this is the movie with the highest budget among all movies that are either Anima
 5. Is your favorite movie in the dataset? What other questions could you ask or answer using `filter()`, `select()`, and `arrange()`?
 
 ```{r}
+library(dplyr)
+
+my_favorite <- "Tangled"
+
+# Check if favorite movie is in the dataset
+if (my_favorite %in% movies$title) {
+  print(paste(my_favorite, "is in the dataset!"))
+} else {
+  print(paste(my_favorite, "is NOT in the dataset."))
+}
+
+# Filter movies with rating > 7, select title and year, arrange by rating desc
+filtered_sorted <- movies %>%
+  filter(rating > 7) %>%
+  select(title, year, rating) %>%
+  arrange(desc(rating))
+
+# Show top 10 filtered and sorted movies
+print(head(filtered_sorted, 10))
 
 ```
 
-
+Tangled is my favorite movie and it was in the dataset, then my code displayed the top 10 highest-rated movies with a rating over 7, and also shows other questions you can explore using filter(), select(), and arrange().
 
 
 
